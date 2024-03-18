@@ -54,6 +54,9 @@ func (h *AuthHandler) SignUp(rw http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		resp.Status = "error"
 		resp.Error = err.Error()
+		rw.WriteHeader(http.StatusInternalServerError)
+	} else {
+		rw.WriteHeader(http.StatusOK)
 	}
 	rawResponse, _ := json.Marshal(resp)
 	rw.Header().Set("Content-Type", "application/json")
@@ -98,6 +101,7 @@ func (h *AuthHandler) SignIn(rw http.ResponseWriter, r *http.Request) {
 		http.Error(rw, err.Error(), http.StatusInternalServerError)
 		return
 	}
+	rw.WriteHeader(http.StatusOK)
 	rawResponse, _ := json.Marshal(auth.SignInResponse{Token: token})
 	rw.Header().Set("Content-Type", "application/json")
 	_, _ = rw.Write(rawResponse)

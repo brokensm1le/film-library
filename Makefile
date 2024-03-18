@@ -11,6 +11,8 @@ stop:
 gen:
 	mockgen -source=internal/auth/repository.go \
 	-destination=internal/auth/mocks/mock_repository.go
+	mockgen -source=internal/auth/usecase.go \
+    	-destination=internal/auth/mocks/mock_usecase.go
 	mockgen -source=internal/service/repository.go \
     	-destination=internal/service/mocks/mock_repository.go
 
