@@ -15,7 +15,7 @@ type Film struct {
 	Name   string         `json:"name" db:"film_name"`
 	RDate  string         `json:"rdate" db:"release_date"`
 	Rating float32        `json:"rating" db:"rating"`
-	Desc   string         `json:"description" db:"description"`
+	Desc   string         `json:"desc" db:"description"`
 	Actors sql.NullString `json:"actors" db:"list_actor"`
 }
 

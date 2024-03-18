@@ -64,7 +64,7 @@ func (s *ServiceHandler) CreateActor(rw http.ResponseWriter, r *http.Request) {
 
 	err := s.serviceUC.CreateActor(&data)
 	if err != nil {
-		log.Printf("Request: CreateActor. Error: %s", resp.Error)
+		log.Printf("Request: CreateActor. Error: %s", err)
 		http.Error(rw, err.Error(), http.StatusInternalServerError)
 		return
 	}

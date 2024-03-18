@@ -15,6 +15,8 @@ gen:
     	-destination=internal/auth/mocks/mock_usecase.go
 	mockgen -source=internal/service/repository.go \
     	-destination=internal/service/mocks/mock_repository.go
+	mockgen -source=internal/service/usecase.go \
+    	-destination=internal/service/mocks/mock_usecase.go
 
 .PHONY: cover
 cover:
