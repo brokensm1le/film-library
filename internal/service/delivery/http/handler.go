@@ -42,7 +42,7 @@ func (s *ServiceHandler) CreateActor(rw http.ResponseWriter, r *http.Request) {
 		resp *service.ResponseModel = &service.ResponseModel{Status: "OK"}
 	)
 
-	tokenData := r.Context().Value(cconstant.ContextValue).(auth.TokenData)
+	tokenData := r.Context().Value(cconstant.ContextValue).(*auth.TokenData)
 	if tokenData.Role == 0 {
 		log.Printf("Request: CreateActor. Error: %s", "Don't have permission")
 		http.Error(rw, fmt.Sprintf("You don't have permission for this operation."), http.StatusForbidden)
@@ -87,7 +87,7 @@ func (s *ServiceHandler) CreateActor(rw http.ResponseWriter, r *http.Request) {
 // @Router       /actor/get/{actor_name} [get]
 func (s *ServiceHandler) GetActor(rw http.ResponseWriter, r *http.Request) {
 
-	tokenData := r.Context().Value(cconstant.ContextValue).(auth.TokenData)
+	tokenData := r.Context().Value(cconstant.ContextValue).(*auth.TokenData)
 	log.Printf("Request: GetActor. User with ID:%d", tokenData.Id)
 
 	name := r.URL.Path[strings.LastIndex(r.URL.Path, "/")+1:]
@@ -119,7 +119,7 @@ func (s *ServiceHandler) GetActor(rw http.ResponseWriter, r *http.Request) {
 // @Router       /actor/get_all [get]
 func (s *ServiceHandler) GetActors(rw http.ResponseWriter, r *http.Request) {
 
-	tokenData := r.Context().Value(cconstant.ContextValue).(auth.TokenData)
+	tokenData := r.Context().Value(cconstant.ContextValue).(*auth.TokenData)
 	log.Printf("Request: GetActors. User with ID:%d", tokenData.Id)
 
 	sort := r.Header.Get("Sort")
@@ -158,7 +158,7 @@ func (s *ServiceHandler) UpdateActor(rw http.ResponseWriter, r *http.Request) {
 		resp *service.ResponseModel = &service.ResponseModel{Status: "OK"}
 	)
 
-	tokenData := r.Context().Value(cconstant.ContextValue).(auth.TokenData)
+	tokenData := r.Context().Value(cconstant.ContextValue).(*auth.TokenData)
 	if tokenData.Role == 0 {
 		log.Printf("Request: UpdateActor. Error: %s", "Don't have permission")
 		http.Error(rw, fmt.Sprintf("You don't have permission for this operation."), http.StatusForbidden)
@@ -203,7 +203,7 @@ func (s *ServiceHandler) DeleteActor(rw http.ResponseWriter, r *http.Request) {
 		resp *service.ResponseModel = &service.ResponseModel{Status: "OK"}
 	)
 
-	tokenData := r.Context().Value(cconstant.ContextValue).(auth.TokenData)
+	tokenData := r.Context().Value(cconstant.ContextValue).(*auth.TokenData)
 	if tokenData.Role == 0 {
 		log.Printf("Request: DeleteActor. Error: %s", "Don't have permission")
 		http.Error(rw, fmt.Sprintf("You don't have permission for this operation."), http.StatusForbidden)
@@ -238,7 +238,7 @@ func (s *ServiceHandler) DeleteActor(rw http.ResponseWriter, r *http.Request) {
 // @Failure      500  {object}  error
 // @Router       /actor/search/{actor_name} [get]
 func (s *ServiceHandler) SearchActor(rw http.ResponseWriter, r *http.Request) {
-	tokenData := r.Context().Value(cconstant.ContextValue).(auth.TokenData)
+	tokenData := r.Context().Value(cconstant.ContextValue).(*auth.TokenData)
 	log.Printf("Request: SearchActor. User with ID:%d", tokenData.Id)
 
 	pattern := r.URL.Path[strings.LastIndex(r.URL.Path, "/")+1:]
@@ -274,7 +274,7 @@ func (s *ServiceHandler) CreateFilm(rw http.ResponseWriter, r *http.Request) {
 		resp *service.ResponseModel = &service.ResponseModel{Status: "OK"}
 	)
 
-	tokenData := r.Context().Value(cconstant.ContextValue).(auth.TokenData)
+	tokenData := r.Context().Value(cconstant.ContextValue).(*auth.TokenData)
 	if tokenData.Role == 0 {
 		log.Printf("Request: CreateFilm. Error: %s", "Don't have permission")
 		http.Error(rw, fmt.Sprintf("You don't have permission for this operation."), http.StatusForbidden)
@@ -318,7 +318,7 @@ func (s *ServiceHandler) CreateFilm(rw http.ResponseWriter, r *http.Request) {
 // @Router       /film/get/{actor_name} [get]
 func (s *ServiceHandler) GetFilm(rw http.ResponseWriter, r *http.Request) {
 
-	tokenData := r.Context().Value(cconstant.ContextValue).(auth.TokenData)
+	tokenData := r.Context().Value(cconstant.ContextValue).(*auth.TokenData)
 	log.Printf("Request: GetFilm. User with ID:%d", tokenData.Id)
 
 	name := r.URL.Path[strings.LastIndex(r.URL.Path, "/")+1:]
@@ -350,7 +350,7 @@ func (s *ServiceHandler) GetFilm(rw http.ResponseWriter, r *http.Request) {
 // @Router       /film/get_all [get]
 func (s *ServiceHandler) GetFilms(rw http.ResponseWriter, r *http.Request) {
 
-	tokenData := r.Context().Value(cconstant.ContextValue).(auth.TokenData)
+	tokenData := r.Context().Value(cconstant.ContextValue).(*auth.TokenData)
 	log.Printf("Request: GetFilms. User with ID:%d", tokenData.Id)
 
 	sort := r.Header.Get("Sort")
@@ -390,7 +390,7 @@ func (s *ServiceHandler) UpdateFilm(rw http.ResponseWriter, r *http.Request) {
 		resp *service.ResponseModel = &service.ResponseModel{Status: "OK"}
 	)
 
-	tokenData := r.Context().Value(cconstant.ContextValue).(auth.TokenData)
+	tokenData := r.Context().Value(cconstant.ContextValue).(*auth.TokenData)
 	if tokenData.Role == 0 {
 		log.Printf("Request: UpdateFilm. Error: %s", "Don't have permission")
 		http.Error(rw, fmt.Sprintf("You don't have permission for this operation."), http.StatusForbidden)
@@ -435,7 +435,7 @@ func (s *ServiceHandler) DeleteFilm(rw http.ResponseWriter, r *http.Request) {
 		resp *service.ResponseModel = &service.ResponseModel{Status: "OK"}
 	)
 
-	tokenData := r.Context().Value(cconstant.ContextValue).(auth.TokenData)
+	tokenData := r.Context().Value(cconstant.ContextValue).(*auth.TokenData)
 	if tokenData.Role == 0 {
 		log.Printf("Request: DeleteFilm. Error: %s", "Don't have permission")
 		http.Error(rw, fmt.Sprintf("You don't have permission for this operation."), http.StatusForbidden)
@@ -470,7 +470,7 @@ func (s *ServiceHandler) DeleteFilm(rw http.ResponseWriter, r *http.Request) {
 // @Failure      500  {object}  error
 // @Router       /film/search/{film_name} [get]
 func (s *ServiceHandler) SearchFilms(rw http.ResponseWriter, r *http.Request) {
-	tokenData := r.Context().Value(cconstant.ContextValue).(auth.TokenData)
+	tokenData := r.Context().Value(cconstant.ContextValue).(*auth.TokenData)
 	log.Printf("Request: SearchFilms. User with ID:%d", tokenData.Id)
 
 	pattern := r.URL.Path[strings.LastIndex(r.URL.Path, "/")+1:]
@@ -506,7 +506,7 @@ func (s *ServiceHandler) AddFilmsByActor(rw http.ResponseWriter, r *http.Request
 		resp *service.ResponseModel = &service.ResponseModel{Status: "OK"}
 	)
 
-	tokenData := r.Context().Value(cconstant.ContextValue).(auth.TokenData)
+	tokenData := r.Context().Value(cconstant.ContextValue).(*auth.TokenData)
 	if tokenData.Role == 0 {
 		log.Printf("Request: AddFilmsByActor. Error: %s", "Don't have permission")
 		http.Error(rw, fmt.Sprintf("You don't have permission for this operation."), http.StatusForbidden)
@@ -555,7 +555,7 @@ func (s *ServiceHandler) AddActorsByFilm(rw http.ResponseWriter, r *http.Request
 		resp *service.ResponseModel = &service.ResponseModel{Status: "OK"}
 	)
 
-	tokenData := r.Context().Value(cconstant.ContextValue).(auth.TokenData)
+	tokenData := r.Context().Value(cconstant.ContextValue).(*auth.TokenData)
 	if tokenData.Role == 0 {
 		log.Printf("Request: AddActorsByFilm. Error: %s", "Don't have permission")
 		http.Error(rw, fmt.Sprintf("You don't have permission for this operation."), http.StatusForbidden)
@@ -604,7 +604,7 @@ func (s *ServiceHandler) DeleteActorFilm(rw http.ResponseWriter, r *http.Request
 		resp *service.ResponseModel = &service.ResponseModel{Status: "OK"}
 	)
 
-	tokenData := r.Context().Value(cconstant.ContextValue).(auth.TokenData)
+	tokenData := r.Context().Value(cconstant.ContextValue).(*auth.TokenData)
 	if tokenData.Role == 0 {
 		log.Printf("Request: DeleteActorFilm. Error: %s", "Don't have permission")
 		http.Error(rw, fmt.Sprintf("You don't have permission for this operation."), http.StatusForbidden)

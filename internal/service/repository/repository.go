@@ -23,7 +23,7 @@ func NewPostgresRepository(db *sqlx.DB) service.Repository {
 func (p *postgresRepository) CreateActor(params *service.Actor) error {
 	var (
 		query = `
-		INSERT INTO %[1]s; (actor_name, sex, bdate)
+		INSERT INTO %[1]s (actor_name, sex, bdate)
 		VALUES ($1, $2, $3)`
 
 		values = []any{params.Name, params.Sex, params.BDate}
@@ -227,7 +227,7 @@ func (p *postgresRepository) GetFilm(name string) (*service.Film, error) {
 	}
 
 	if len(data) == 0 {
-		return &service.Film{}, fmt.Errorf("no actor")
+		return &service.Film{}, fmt.Errorf("no film")
 	}
 
 	return &data[0], nil

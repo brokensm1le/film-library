@@ -11,11 +11,21 @@
 				{
 					"name": "add_actor",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTA4MDA4NDAsImlhdCI6MTcxMDc3OTI0MCwiaWQiOjEsInJvbGUiOjF9.q1gLqWvo6a_fRwDuXZRKziReXhOD5Wtrywz5SCo9F1k",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Cillian Murphy\",\n    \"sex\": \"m\",\n    \"bdate\": \"1976-05-25\"\n}",
+							"raw": "{\n    \"name\": \"Johny Depp\",\n    \"sex\": \"m\",\n    \"bdate\": \"1963-06-09\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -239,7 +249,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTA1MjU0MjAsImlhdCI6MTcxMDUwMzgyMCwiaWQiOjEsInJvbGUiOjB9.xDIN29T6kqSXF_mDDxZu_LPEcmGmsSUpULR2X4snNIk",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTA4MDA4NDAsImlhdCI6MTcxMDc3OTI0MCwiaWQiOjEsInJvbGUiOjF9.q1gLqWvo6a_fRwDuXZRKziReXhOD5Wtrywz5SCo9F1k",
 									"type": "string"
 								}
 							]
@@ -248,7 +258,7 @@
 						"header": [
 							{
 								"key": "Sort",
-								"value": "bdate",
+								"value": "cfdcf",
 								"type": "text"
 							}
 						],
@@ -271,10 +281,20 @@
 				{
 					"name": "delete_actor",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTA4MDA4NDAsImlhdCI6MTcxMDc3OTI0MCwiaWQiOjEsInJvbGUiOjF9.q1gLqWvo6a_fRwDuXZRKziReXhOD5Wtrywz5SCo9F1k",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/actor/delete/Leonardo+Dicaprio",
+							"raw": "http://localhost:8080/api/actor/delete/Johnny+Depp",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -284,7 +304,7 @@
 								"api",
 								"actor",
 								"delete",
-								"Leonardo+Dicaprio"
+								"Johnny+Depp"
 							]
 						}
 					},
@@ -293,6 +313,16 @@
 				{
 					"name": "get_actor",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTA4MDA4NDAsImlhdCI6MTcxMDc3OTI0MCwiaWQiOjEsInJvbGUiOjF9.q1gLqWvo6a_fRwDuXZRKziReXhOD5Wtrywz5SCo9F1k",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -315,6 +345,16 @@
 				{
 					"name": "update_actor",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTA4MDA4NDAsImlhdCI6MTcxMDc3OTI0MCwiaWQiOjEsInJvbGUiOjF9.q1gLqWvo6a_fRwDuXZRKziReXhOD5Wtrywz5SCo9F1k",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PATCH",
 						"header": [],
 						"body": {
@@ -327,7 +367,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/actor/update/Johnny+Depp",
+							"raw": "http://localhost:8080/api/actor/update/Johny+Depp",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -337,7 +377,7 @@
 								"api",
 								"actor",
 								"update",
-								"Johnny+Depp"
+								"Johny+Depp"
 							]
 						}
 					},
@@ -346,10 +386,20 @@
 				{
 					"name": "search Copy",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTA4MDA4NDAsImlhdCI6MTcxMDc3OTI0MCwiaWQiOjEsInJvbGUiOjF9.q1gLqWvo6a_fRwDuXZRKziReXhOD5Wtrywz5SCo9F1k",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/actor/search/d",
+							"raw": "http://localhost:8080/api/actor/search/p",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -359,7 +409,7 @@
 								"api",
 								"actor",
 								"search",
-								"d"
+								"p"
 							]
 						}
 					},
@@ -373,11 +423,21 @@
 				{
 					"name": "add_film",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTA4MDA4NDAsImlhdCI6MTcxMDc3OTI0MCwiaWQiOjEsInJvbGUiOjF9.q1gLqWvo6a_fRwDuXZRKziReXhOD5Wtrywz5SCo9F1k",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Oppenheimer\",\n    \"rating\": 8.4,\n    \"rdate\": \"2023-07-20\",\n    \"desc\": \"Reporter Alexander Knox and photojournalist Vicki Vale investigate sightings of the 'Batman', a masked vigilante targeting Gotham City's criminals.\"\n}",
+							"raw": "{\n    \"name\": \"Titanic\",\n    \"rating\": 9.2,\n    \"rdate\": \"1997-02-20\",\n    \"desc\": \"Reporter Alexander Knox and photojournalist Vicki Vale investigate sightings of the 'Batman', a masked vigilante targeting Gotham City's criminals.\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -385,13 +445,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/film/add",
+							"raw": "http://localhost:8080/api/film/add",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
 								"film",
 								"add"
 							]
@@ -531,19 +592,30 @@
 				{
 					"name": "get_film",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTA4MDA4NDAsImlhdCI6MTcxMDc3OTI0MCwiaWQiOjEsInJvbGUiOjF9.q1gLqWvo6a_fRwDuXZRKziReXhOD5Wtrywz5SCo9F1k",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/film/get/Batman",
+							"raw": "http://localhost:8080/api/film/get/Batmanf",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
 								"film",
 								"get",
-								"Batman"
+								"Batmanf"
 							]
 						}
 					},
@@ -552,22 +624,33 @@
 				{
 					"name": "get_all",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTA4MDA4NDAsImlhdCI6MTcxMDc3OTI0MCwiaWQiOjEsInJvbGUiOjF9.q1gLqWvo6a_fRwDuXZRKziReXhOD5Wtrywz5SCo9F1k",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
 								"key": "Sort",
-								"value": "",
+								"value": "film_name",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/film/get_all",
+							"raw": "http://localhost:8080/api/film/get_all",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
 								"film",
 								"get_all"
 							]
@@ -578,6 +661,16 @@
 				{
 					"name": "update",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTA4MDA4NDAsImlhdCI6MTcxMDc3OTI0MCwiaWQiOjEsInJvbGUiOjF9.q1gLqWvo6a_fRwDuXZRKziReXhOD5Wtrywz5SCo9F1k",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PATCH",
 						"header": [],
 						"body": {
@@ -590,13 +683,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/film/update/Alf",
+							"raw": "http://localhost:8080/api/film/update/Alf",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
 								"film",
 								"update",
 								"Alf"
@@ -608,19 +702,30 @@
 				{
 					"name": "search",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTA4MDA4NDAsImlhdCI6MTcxMDc3OTI0MCwiaWQiOjEsInJvbGUiOjF9.q1gLqWvo6a_fRwDuXZRKziReXhOD5Wtrywz5SCo9F1k",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/film/search/lf",
+							"raw": "http://localhost:8080/api/film/search/a",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
 								"film",
 								"search",
-								"lf"
+								"a"
 							]
 						}
 					},
@@ -634,11 +739,21 @@
 				{
 					"name": "AddFilmsByActor",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTA4MDA4NDAsImlhdCI6MTcxMDc3OTI0MCwiaWQiOjEsInJvbGUiOjF9.q1gLqWvo6a_fRwDuXZRKziReXhOD5Wtrywz5SCo9F1k",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"actor\": \"\",\n    \"films\": [\"\", \"\"]\n}",
+							"raw": "{\n    \"actor\": \"Cillian Murphy\",\n    \"films\": [\"Alf\"]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -646,13 +761,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/relation/films_by_actor",
+							"raw": "http://localhost:8080/api/relation/films_by_actor",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
 								"relation",
 								"films_by_actor"
 							]
@@ -663,11 +779,21 @@
 				{
 					"name": "actors_by_film",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTA4MDA4NDAsImlhdCI6MTcxMDc3OTI0MCwiaWQiOjEsInJvbGUiOjF9.q1gLqWvo6a_fRwDuXZRKziReXhOD5Wtrywz5SCo9F1k",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"film\":\"kva\",\n    \"actors\": [\"Cillian Murphy\"]\n}",
+							"raw": "{\n    \"film\":\"Oppenheimer\",\n    \"actors\": [\"Cillian Murphy\", \"Robert Downey Jr\"]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -675,13 +801,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/relation/actors_by_film",
+							"raw": "http://localhost:8080/api/relation/actors_by_film",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
 								"relation",
 								"actors_by_film"
 							]
@@ -690,13 +817,23 @@
 					"response": []
 				},
 				{
-					"name": "AddFilmsByActor Copy",
+					"name": "DeleteRealation",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTA4MDA4NDAsImlhdCI6MTcxMDc3OTI0MCwiaWQiOjEsInJvbGUiOjF9.q1gLqWvo6a_fRwDuXZRKziReXhOD5Wtrywz5SCo9F1k",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"film\":\"kva\",\n    \"actor\": \"Cillian Murphy\"\n}",
+							"raw": "{\n    \"film\":\"Titanic\",\n    \"actor\": \"Cillian Murphy\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -704,13 +841,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/relation/delete",
+							"raw": "http://localhost:8080/api/relation/delete",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
 								"relation",
 								"delete"
 							]
