@@ -34,4 +34,4 @@ REST API приложение, который предоставляет упр�
 
 ## API:
 
- Весь API описан в [/docs]{https://github.com/brokensm1le/film-library/tree/master/docs} и также приложен [postman collection]{https://github.com/brokensm1le/film-library/blob/master/New%20Collection.postman_collection.json}.
+ Весь API описан в [/docs](https://github.com/brokensm1le/film-library/tree/master/docs) и также приложен [postman collection](https://github.com/brokensm1le/film-library/blob/master/New%20Collection.postman_collection.json).
