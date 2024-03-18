@@ -65,9 +65,10 @@ func (s *ServiceHandler) CreateActor(rw http.ResponseWriter, r *http.Request) {
 	err := s.serviceUC.CreateActor(&data)
 	if err != nil {
 		log.Printf("Request: CreateActor. Error: %s", resp.Error)
-		resp.Error = err.Error()
-		resp.Status = "error"
+		http.Error(rw, err.Error(), http.StatusInternalServerError)
+		return
 	}
+	rw.WriteHeader(http.StatusOK)
 	rawResponse, _ := json.Marshal(resp)
 	rw.Header().Set("Content-Type", "application/json")
 	_, _ = rw.Write(rawResponse)
@@ -177,9 +178,10 @@ func (s *ServiceHandler) UpdateActor(rw http.ResponseWriter, r *http.Request) {
 	err := s.serviceUC.UpdateActor(name, &data)
 	if err != nil {
 		log.Printf("Request: UpdateActor. Error: %s", resp.Error)
-		resp.Error = err.Error()
-		resp.Status = "error"
+		http.Error(rw, err.Error(), http.StatusInternalServerError)
+		return
 	}
+	rw.WriteHeader(http.StatusOK)
 	rawResponse, _ := json.Marshal(resp)
 	rw.Header().Set("Content-Type", "application/json")
 	_, _ = rw.Write(rawResponse)
@@ -215,9 +217,10 @@ func (s *ServiceHandler) DeleteActor(rw http.ResponseWriter, r *http.Request) {
 	err := s.serviceUC.DeleteActor(name)
 	if err != nil {
 		log.Printf("Request: DeleteActor. Error: %s", resp.Error)
-		resp.Error = err.Error()
-		resp.Status = "error"
+		http.Error(rw, err.Error(), http.StatusInternalServerError)
+		return
 	}
+	rw.WriteHeader(http.StatusOK)
 	rawResponse, _ := json.Marshal(resp)
 	rw.Header().Set("Content-Type", "application/json")
 	_, _ = rw.Write(rawResponse)
@@ -293,9 +296,10 @@ func (s *ServiceHandler) CreateFilm(rw http.ResponseWriter, r *http.Request) {
 	err := s.serviceUC.CreateFilm(&data)
 	if err != nil {
 		log.Printf("Request: CreateFilm. Error: %s", resp.Error)
-		resp.Error = err.Error()
-		resp.Status = "error"
+		http.Error(rw, err.Error(), http.StatusInternalServerError)
+		return
 	}
+	rw.WriteHeader(http.StatusOK)
 	rawResponse, _ := json.Marshal(resp)
 	rw.Header().Set("Content-Type", "application/json")
 	_, _ = rw.Write(rawResponse)
@@ -406,9 +410,10 @@ func (s *ServiceHandler) UpdateFilm(rw http.ResponseWriter, r *http.Request) {
 	err := s.serviceUC.UpdateFilm(name, &data)
 	if err != nil {
 		log.Printf("Request: UpdateFilm. Error: %s", resp.Error)
-		resp.Error = err.Error()
-		resp.Status = "error"
+		http.Error(rw, err.Error(), http.StatusInternalServerError)
+		return
 	}
+	rw.WriteHeader(http.StatusOK)
 	rawResponse, _ := json.Marshal(resp)
 	rw.Header().Set("Content-Type", "application/json")
 	_, _ = rw.Write(rawResponse)
@@ -444,9 +449,10 @@ func (s *ServiceHandler) DeleteFilm(rw http.ResponseWriter, r *http.Request) {
 	err := s.serviceUC.DeleteFilm(name)
 	if err != nil {
 		log.Printf("Request: DeleteFilm. Error: %s", resp.Error)
-		resp.Error = err.Error()
-		resp.Status = "error"
+		http.Error(rw, err.Error(), http.StatusInternalServerError)
+		return
 	}
+	rw.WriteHeader(http.StatusOK)
 	rawResponse, _ := json.Marshal(resp)
 	rw.Header().Set("Content-Type", "application/json")
 	_, _ = rw.Write(rawResponse)
@@ -523,9 +529,10 @@ func (s *ServiceHandler) AddFilmsByActor(rw http.ResponseWriter, r *http.Request
 	err := s.serviceUC.AddFilmsByActor(&data)
 	if err != nil {
 		log.Printf("Request: AddFilmsByActor. Error: %s", resp.Error)
-		resp.Error = err.Error()
-		resp.Status = "error"
+		http.Error(rw, err.Error(), http.StatusInternalServerError)
+		return
 	}
+	rw.WriteHeader(http.StatusOK)
 	rawResponse, _ := json.Marshal(resp)
 	rw.Header().Set("Content-Type", "application/json")
 	_, _ = rw.Write(rawResponse)
@@ -571,9 +578,10 @@ func (s *ServiceHandler) AddActorsByFilm(rw http.ResponseWriter, r *http.Request
 	err := s.serviceUC.AddActorsByFilm(&data)
 	if err != nil {
 		log.Printf("Request: AddActorsByFilm. Error: %s", resp.Error)
-		resp.Error = err.Error()
-		resp.Status = "error"
+		http.Error(rw, err.Error(), http.StatusInternalServerError)
+		return
 	}
+	rw.WriteHeader(http.StatusOK)
 	rawResponse, _ := json.Marshal(resp)
 	rw.Header().Set("Content-Type", "application/json")
 	_, _ = rw.Write(rawResponse)
@@ -613,9 +621,10 @@ func (s *ServiceHandler) DeleteActorFilm(rw http.ResponseWriter, r *http.Request
 	err := s.serviceUC.DeleteActorFilm(&data)
 	if err != nil {
 		log.Printf("Request: DeleteActorFilm. Error: %s", resp.Error)
-		resp.Error = err.Error()
-		resp.Status = "error"
+		http.Error(rw, err.Error(), http.StatusInternalServerError)
+		return
 	}
+	rw.WriteHeader(http.StatusOK)
 	rawResponse, _ := json.Marshal(resp)
 	rw.Header().Set("Content-Type", "application/json")
 	_, _ = rw.Write(rawResponse)
