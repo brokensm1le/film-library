@@ -1,3 +1,12 @@
+.PHONY: buildrun
+buildrun:
+	docker-compose build
+	docker-compose up -d
+
+.PHONY: stop
+stop:
+	docker-compose down
+
 .PHONY: gen
 gen:
 	mockgen -source=internal/auth/repository.go \
